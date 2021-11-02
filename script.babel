@@ -1,4 +1,3 @@
-<script>
 const initialState  = `
 # Heading 1
 ## Heading 2
@@ -60,4 +59,3 @@ class App extends React.Component {
 
 ReactDOM.render(<App />, document.getElementById('app'));
 
-</script>
