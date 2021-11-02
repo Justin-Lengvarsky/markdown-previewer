@@ -1,0 +1,60 @@
+const initialState  = `
+# Heading 1
+## Heading 2
+  
+**This is bolded text**
+
+[This is a link](https://www.freecodecamp.org)
+
+This is inline code: \`<div></div>\`
+
+> This is a code block
+  
+\`\`\`
+  
+x = y + 3
+  
+\`\`\`
+
+- List item 1
+- List item 2
+- List item 3
+  
+![FreeCodeCamp](https://design-style-guide.freecodecamp.org/downloads/fcc_secondary_large.svg)
+`;
+
+class App extends React.Component {
+  state = {
+    text: initialState
+  }
+ 
+  handleChange = (e) => {
+    this.setState ({
+      text: e.target.value
+    })
+  }
+  
+
+  render () {
+    const { text } = this.state;
+    const markdown = marked(text, {breaks: true});
+    
+    return (
+    <div>
+        <h2>Markdown Previewer</h2>
+        <div id='areas'>
+          <div id='text-area'>
+          <h3>Enter Here</h3>
+          <textarea id="editor" class='box' value= {text} onChange={this.handleChange} />
+          </div>
+          <div id='preview-area'>
+          <h3>Result</h3>
+          <div id='preview' class='box' dangerouslySetInnerHTML={{__html: markdown}}></div>
+          </div> 
+        </div>
+        </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'));

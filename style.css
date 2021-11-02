@@ -1,0 +1,44 @@
+body {
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-color: green;
+}
+
+#app {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#areas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+
+.box {
+  min-height: 800px;
+  min-width: 600px;
+  background-color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 200px;
+  padding: 20px;
+}
+
+#preview {
+  text-align: left;
+}
+
+#preview img {
+  width: 50%;
+  margin: 50px 0px;
+}
